@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { auth, isLoggedIn } from '~/stores/auth.store';
-	import Redirect from './Redirect.svelte';
+	import Redirect from '~/components/static/Redirect.svelte';
 
 	export let redirect: string | undefined = undefined;
 </script>
