@@ -2,8 +2,11 @@
 // for information about these interfaces
 declare global {
 	namespace App {
+		import type { User } from "./models/auth.models";
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			user: User
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}

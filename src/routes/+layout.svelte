@@ -7,7 +7,16 @@
 
 	onMount(() => {
 		const { auth } = initFirebase();
-		return auth.onAuthStateChanged(async (user) => {
+		const unSubscribeTokenChange = auth.onIdTokenChanged(async (user) => {
+			const token = await user?.getIdToken();
+			if (token) {
+				await fetch('/api/session', {
+					method: 'POST',
+					body: JSON.stringify({ token })
+				});
+			}
+		});
+		const unSubscribeAuthChange = auth.onAuthStateChanged(async (user) => {
 			authStore.set({
 				isLoading: false,
 				user:
@@ -18,6 +27,11 @@
 					null
 			});
 		});
+
+		return () => {
+			unSubscribeTokenChange();
+			unSubscribeAuthChange();
+		};
 	});
 </script>
 

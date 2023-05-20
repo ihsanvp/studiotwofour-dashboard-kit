@@ -31,4 +31,7 @@ export async function login(email: string, password: string) {
 export async function logout() {
     const firebaseAuth = getAuth()
     await signOut(firebaseAuth)
+    await fetch("/api/session", {
+        method: "DELETE",
+    })
 }
