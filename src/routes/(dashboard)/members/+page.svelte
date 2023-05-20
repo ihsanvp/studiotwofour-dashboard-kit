@@ -23,7 +23,7 @@
 			Doloribus tempore quod, perferendis quasi odio illo!
 		</div>
 		<div>
-			<InviteMembersModal>Invite Members</InviteMembersModal>
+			<InviteMembersModal users={$result.data || []}>Invite Members</InviteMembersModal>
 		</div>
 	</div>
 	<div class="mt-5">
