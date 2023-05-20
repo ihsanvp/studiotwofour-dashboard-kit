@@ -48,13 +48,13 @@
 		<div class="my-2 w-full border-t" />
 		<MenuItem>
 			<button
-				class="px-3 py-2 w-full flex items-center justify-between rounded hover:bg-red-600 hover:text-white text-sm text-red-600"
+				class="px-3 py-2 w-full flex items-center gap-3 rounded hover:bg-red-600 hover:text-white text-sm text-red-600"
 				on:click={logout}
 			>
-				<span>Logout</span>
 				<span class="text-xl">
 					<Icon icon="heroicons-outline:logout" />
 				</span>
+				<span>Logout</span>
 			</button>
 		</MenuItem>
 	</MenuItems>
