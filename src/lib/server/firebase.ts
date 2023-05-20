@@ -27,7 +27,7 @@ export async function verifyToken(token: string) {
         await admin.auth().verifyIdToken(token);
         return true
     } catch (err) {
-        console.error('decode:error =>', (err as Error).name);
+        console.error('decode:error =>', err);
         return false;
     }
 }
